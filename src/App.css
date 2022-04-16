@@ -1,0 +1,127 @@
+@font-face {
+    font-family: font;
+    src: url('./fonts/Rubik-Regular.ttf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: font;
+    font-size: 30px;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+:root{
+    --color1: #f5f5f5;
+    --color2: #282830;
+    --color3: #282830;
+    --color4: #3c3c41;
+}
+
+body{
+    background-color: var(--color1);
+    color: var(--color2);
+}
+
+body[started]{
+    background-color: var(--color2);
+    color: var(--color1);
+}
+
+#container{
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#container *{
+    display: flex;
+    justify-content: center;
+}
+
+#tags{
+    margin-bottom: 50px;
+}
+
+#tags div{
+    font-size: 30px;
+    height: 36px;
+    color: #777;
+}
+
+#tags #focus{
+    display: none;
+}
+
+#tags #pause{
+    display: flex;
+}
+
+body[started] #tags #focus{
+    display: flex;
+}
+
+body[started] #tags #pause{
+    display: none;
+}
+
+#timer{
+    justify-content: space-between;
+    /* background-color: blue; */
+    padding: 10px;
+    margin-bottom: 30px;
+    min-width: 260px;
+}
+
+#timer .camp{
+    align-items: baseline;
+
+}
+
+#timer .time{
+    font-size: 60px;
+}
+
+#timer .unid{
+    font-size: 20px;
+}
+
+
+#controls .bot{
+    cursor: pointer;
+    margin: 5px;
+    background-color: #0000;
+    border-radius: 30px;
+    transition: .1s;
+    padding: 10px 20px;
+    border: 1px solid #fff0;
+}
+
+@media(min-width: 600px){
+
+    body #controls .bot:hover{
+        box-shadow: #aaa 0px 2px 2px;
+        border: 1px solid #eee;
+        transform: translate(0, -2px);
+    }
+    
+    body[started] #controls .bot:hover{
+        box-shadow: #000 0px 2px 2px;
+        border: 1px solid #222;
+        transform: translate(0, -2px);
+    }
+
+}
